@@ -2,19 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import './index.css';
 
-/*class Square extends React.Component {
-  render() {
-    return (
-      <button
-          className="square"
-          onClick={() => this.props.onClick()}
-      >
-        {this.props.value}
-      </button>
-    );
-  }
-}*/
-
 function Square(props) {
   return (
     <button className="square" onClick={props.onClick}>
@@ -88,7 +75,7 @@ class Game extends React.Component {
   jumpTo(step){
     this.setState({
       stepNumber: step,
-      xisNext:(step % 2) === 0
+      xIsNext:(step % 2) === 0
     });
   }
   
@@ -120,7 +107,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
-            onClick={(i) => this.handleClick(i)}
+            onClick={i => this.handleClick(i)}
           />
         </div>
         <div className="game-info">
